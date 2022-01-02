@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3EFEF"
+    tools:context=".fragment.ExpenseFragment">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp">
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:maxWidth="300dp"
+            android:text="@string/note_at_top"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/note"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/total_budget"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/note"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/total"
+            android:text=""
+            android:textColor="#787474"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/total"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp" />
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/middle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom"
+        android:layout_below="@+id/top"
+        android:background="@drawable/middle_layout">
+
+        <TextView
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/dollar"
+            android:textColor="#B6B0B0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/amount"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/currency"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="50sp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/gym" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bottom_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/bottomRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recChooseNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true" />
+
+                <View
+                    android:id="@+id/chooser"
+                    android:layout_width="9dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="44dp"
+                    android:background="@drawable/item_cursor"
+                    android:padding="5dp" />
+
+            </RelativeLayout>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/containerStatus"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="40dp"
+             android:layout_marginTop="16dp"
+             app:layout_constraintTop_toBottomOf="@+id/bottomRelative"
+             app:layout_constraintStart_toStartOf="parent">
+             <TextView
+                 android:id="@+id/status"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Normal"
+                 android:textColor="@color/white"
+                 android:textSize="24sp"
+                 android:padding="4dp"
+                 android:textStyle="bold"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent" />
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/containerStatus">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#6BFFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="@dimen/box_size"
+                android:layout_height="@dimen/box_size"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

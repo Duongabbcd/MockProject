@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/expenseFragment"
+    android:id="@+id/navigator">
+
+    <fragment
+        android:id="@+id/expenseFragment"
+        tools:layout="@layout/fragment_expense"
+        android:label="Expense Fragment"
+        android:name="gst.trainingcourse.mockproject.fragment.ExpenseFragment"/>
+
+</navigation>

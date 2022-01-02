@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MockProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="note_at_top">Set up a monthly budget goal</string>
+    <string name="total_budget">Total budget is</string>
+    <string name="total_number"> $ 2,400</string>
+    <string name="cafe">Cafe</string>
+    <string name="first_cost">$ 400</string>
+    <string name="taxi">Taxi</string>
+    <string name="second_cost">$ 170</string>
+    <string name="rent">Rent</string>
+    <string name="love">Love</string>
+    <string name="third_cost">$ 170</string>
+    <string name="forth_cost">$ 170</string>
+    <string name="food">Food</string>
+    <string name="fifth_cost">$ 170</string>
+    <string name="sixth_cost">$ 170</string>
+    <string name="other">Other</string>
+    <string name="dollar">$</string>
+    <string name="amount">400</string>
+    <string name="save">Save</string>
+</resources>
